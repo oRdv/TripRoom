@@ -3,6 +3,7 @@ package br.senai.sp.jandira.triproom
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -32,6 +33,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -49,6 +52,7 @@ class MainActivity : ComponentActivity() {
                     color = Color.White
                 ) {
                     Greeting()
+                    Home()
                 }
             }
         }
@@ -178,29 +182,43 @@ fun Greeting(){
         }
 
         Row (
-            modifier = Modifier
-                .width(120.dp)
-                .height(140.dp)
-                .padding(top = 80.dp)
-                .background(
-                    color = Color(0xFF2BA0D2),
-                    shape = RoundedCornerShape( topEnd = 8.dp)
-                ),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
-
-
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.Bottom,
+            horizontalArrangement = Arrangement.Start
         ){
+            Row (
+                modifier = Modifier
+                    .width(120.dp)
+                    .height(40.dp)
+                    .background(
+                        color = Color(0xFF2BA0D2),
+                        shape = RoundedCornerShape(topEnd = 8.dp)
+                    ),
+            ){
 
-
+            }
         }
+
 
     }
 
 
 
-
 }
+
+
+@Composable
+fun Home(){
+    Column (
+        modifier = Modifier.fillMaxWidth()
+            .height(197.dp)
+    ) {
+        Image(painter = painterResource(id = R.drawable.paris),
+                contentDescription = "foto paris",
+            contentScale = ContentScale.Crop
+            )
+        }
+    }
 
 
 
@@ -208,6 +226,6 @@ fun Greeting(){
 @Composable
 fun GreetingPreview() {
     TriproomTheme {
-        Greeting()
+        Home()
     }
 }
