@@ -1,5 +1,8 @@
 package br.senai.sp.jandira.triproom.screens
 
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,27 +20,31 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import br.senai.sp.jandira.triproom.R
+import br.senai.sp.jandira.triproom.ui.theme.TriproomTheme
 
 @Composable
-fun Greeting(){
+fun Login() {
     Column(
         modifier = Modifier
             .fillMaxSize(),
         horizontalAlignment = Alignment.End,
         verticalArrangement = Arrangement.SpaceBetween
 
-
     )
     {
-        Row (
+        Row(
             modifier = Modifier
                 .width(120.dp)
                 .height(40.dp)
@@ -46,7 +53,7 @@ fun Greeting(){
                     shape = RoundedCornerShape(bottomStart = 8.dp)
                 ),
 
-            ){
+            ) {
         }
     }
     Column(
@@ -54,21 +61,21 @@ fun Greeting(){
             .padding(top = 204.dp)
             .padding(start = 16.dp)
 
-    ){
+    ) {
         Text(
-            text = "Login",
+            text = stringResource(id = R.string.trip_login),
             fontSize = 48.sp,
             fontWeight = FontWeight.Bold,
             color = Color(0xFF2BA0D2)
         )
         Text(
-            text = "Please sign in to continue.",
-            color =  Color (0xffA09C9C)
+            text = stringResource(id = R.string.trip_signup),
+            color = Color(0xffA09C9C)
         )
 
     }
 
-    Column (
+    Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 377.dp)
@@ -101,7 +108,7 @@ fun Greeting(){
             },
         )
 
-        Row (
+        Row(
             modifier = Modifier
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.End
@@ -128,13 +135,13 @@ fun Greeting(){
             }
         }
 
-        Row (
+        Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(end = 16.dp)
                 .padding(top = 31.dp),
             horizontalArrangement = Arrangement.End
-        ){
+        ) {
 
             Text(
                 text = "Don’t have an account?",
@@ -148,12 +155,12 @@ fun Greeting(){
             )
         }
 
-        Row (
+        Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.Bottom,
             horizontalArrangement = Arrangement.Start
-        ){
-            Row (
+        ) {
+            Row(
                 modifier = Modifier
                     .width(120.dp)
                     .height(40.dp)
@@ -161,7 +168,7 @@ fun Greeting(){
                         color = Color(0xFF2BA0D2),
                         shape = RoundedCornerShape(topEnd = 8.dp)
                     ),
-            ){
+            ) {
 
             }
         }
@@ -169,6 +176,13 @@ fun Greeting(){
 
     }
 
+}
 
 
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun GreetingPreview() {
+    TriproomTheme {
+        Login()
+    }
 }

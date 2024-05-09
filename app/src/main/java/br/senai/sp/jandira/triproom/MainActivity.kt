@@ -69,6 +69,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import br.senai.sp.jandira.triproom.screens.Home
+import br.senai.sp.jandira.triproom.screens.Login
 import br.senai.sp.jandira.triproom.ui.theme.TriproomTheme
 import kotlin.math.round
 
@@ -82,19 +84,18 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Color.White
                 ) {
+
+                    val controleNav = rememberNavController()
+
+                    controleNav(navController = controleNav, startDestin = "login"){
+                        composable("login"){ Login(controleNav) }
+                        composable("cadastro"){ Signup(controleNav) }
+                        composable("home"){ Home(controleNav) }
+
+
+                    }
                 }
             }
         }
-    }
-}
-
-
-
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun GreetingPreview() {
-    TriproomTheme {
-
     }
 }

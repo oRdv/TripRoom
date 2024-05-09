@@ -37,24 +37,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.senai.sp.jandira.triproom.R
 
 
 @Composable
-fun Home(){
+fun Home(controleNav: NavController) {
     Column(
         modifier = Modifier.background(Color(0xFFF6F6F8))
-    ){
-
+    ) {
         var pesquisarState = remember {
             mutableListOf("")
         }
-        Box(modifier = Modifier
-            .fillMaxWidth()
-            .height(197.dp)
-        ){
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(197.dp)
+        ) {
             Image(
                 painter = painterResource(id = R.drawable.paris),
                 contentDescription = "foto paris",
@@ -62,19 +63,21 @@ fun Home(){
                 contentScale = ContentScale.Crop
             )
 
-            Column (
+            Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 19.dp, vertical = 13.dp),
                 horizontalAlignment = Alignment.End
-            ){
-                Card (
+            ) {
+                Card(
                     shape = CircleShape,
                     border = BorderStroke(width = 2.dp, Color(color = 0xffffffff)),
                     modifier = Modifier.size(61.dp)
                 ) {
-                    Image(painter = painterResource(id = R.drawable.person),
-                        contentDescription = "Imagem do usuario")
+                    Image(
+                        painter = painterResource(id = R.drawable.person),
+                        contentDescription = "Imagem do usuario"
+                    )
                 }
                 Text(
                     text = "Susanna Hoffs",
@@ -89,7 +92,7 @@ fun Home(){
                     .padding(19.dp),
                 verticalArrangement = Arrangement.Bottom
             ) {
-                Row (
+                Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
@@ -124,79 +127,82 @@ fun Home(){
             modifier = Modifier
                 .fillMaxWidth()
 
-        ){
-            item{ Card (
-                modifier = Modifier
-                    .size(150.dp, height = 84.dp)
-                    .padding(horizontal = 9.dp),
-                colors = CardDefaults.cardColors(Color(0xFF2BA0D2))
-            ){
-                Column (
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            item {
+                Card(
+                    modifier = Modifier
+                        .size(150.dp, height = 84.dp)
+                        .padding(horizontal = 9.dp),
+                    colors = CardDefaults.cardColors(Color(0xFF2BA0D2))
                 ) {
-                    Icon(
-                        imageVector = Icons.Default.Landscape,
-                        contentDescription = "Montanhas",
-                        tint = Color.White,
-                        modifier = Modifier.size(42.dp)
-                    )
-                    Text(
-                        text = "Montain",
-                        color = Color.White
-                    )
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Landscape,
+                            contentDescription = "Montanhas",
+                            tint = Color.White,
+                            modifier = Modifier.size(42.dp)
+                        )
+                        Text(
+                            text = "Montain",
+                            color = Color.White
+                        )
+                    }
                 }
             }
-            }
-            item{ Card (
-                modifier = Modifier
-                    .size(150.dp, height = 84.dp)
-                    .padding(horizontal = 9.dp),
-                colors = CardDefaults.cardColors(Color(0xFF73B6D2))
-            ){
-                Column (
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
+            item {
+                Card(
+                    modifier = Modifier
+                        .size(150.dp, height = 84.dp)
+                        .padding(horizontal = 9.dp),
+                    colors = CardDefaults.cardColors(Color(0xFF73B6D2))
                 ) {
-                    Icon(
-                        imageVector = Icons.Default.Snowboarding,
-                        contentDescription = "homem na neve",
-                        tint = Color.White,
-                        modifier = Modifier.size(42.dp)
-                    )
-                    Text(
-                        text = "Snow",
-                        color = Color.White
-                    )
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Snowboarding,
+                            contentDescription = "homem na neve",
+                            tint = Color.White,
+                            modifier = Modifier.size(42.dp)
+                        )
+                        Text(
+                            text = "Snow",
+                            color = Color.White
+                        )
+                    }
                 }
-            }
             }
 
-            item{ Card (
-                modifier = Modifier
-                    .size(150.dp, height = 84.dp)
-                    .padding(horizontal = 9.dp),
-                colors = CardDefaults.cardColors(Color(0xFFB0DAEC))
-            ){
-                Column (
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
+            item {
+                Card(
+                    modifier = Modifier
+                        .size(150.dp, height = 84.dp)
+                        .padding(horizontal = 9.dp),
+                    colors = CardDefaults.cardColors(Color(0xFFB0DAEC))
                 ) {
-                    Icon(
-                        imageVector = Icons.Default.BeachAccess,
-                        contentDescription = "Praia",
-                        tint = Color.White,
-                        modifier = Modifier.size(42.dp)
-                    )
-                    Text(
-                        text = "Beach",
-                        color = Color.White
-                    )
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.BeachAccess,
+                            contentDescription = "Praia",
+                            tint = Color.White,
+                            modifier = Modifier.size(42.dp)
+                        )
+                        Text(
+                            text = "Beach",
+                            color = Color.White
+                        )
+                    }
                 }
-            }
             }
         }
 
@@ -231,7 +237,7 @@ fun Home(){
             color = Color.Gray,
             modifier = Modifier.padding(horizontal = 13.dp)
         )
-        LazyColumn{
+        LazyColumn {
             item {
                 Card(
                     modifier = Modifier
@@ -240,14 +246,16 @@ fun Home(){
                     colors = CardDefaults.cardColors(Color.White),
                     elevation = CardDefaults.elevatedCardElevation(defaultElevation = 16.dp)
                 ) {
-                    Column (
+                    Column(
                         modifier = Modifier.fillMaxWidth()
-                    ){
+                    ) {
                         Card(
                             modifier = Modifier.fillMaxWidth(),
                             colors = CardDefaults.cardColors(Color.White)
                         ) {
-                            Image(painter =  painterResource(id = R.drawable.img), contentDescription = "London",
+                            Image(
+                                painter = painterResource(id = R.drawable.img),
+                                contentDescription = "London",
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(6.dp),
@@ -268,7 +276,7 @@ fun Home(){
                             modifier = Modifier.padding(start = 5.dp)
                         )
 
-                        Column (
+                        Column(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(10.dp),
@@ -292,14 +300,16 @@ fun Home(){
                     colors = CardDefaults.cardColors(Color.White),
                     elevation = CardDefaults.elevatedCardElevation(defaultElevation = 16.dp)
                 ) {
-                    Column (
+                    Column(
                         modifier = Modifier.fillMaxWidth()
-                    ){
+                    ) {
                         Card(
                             modifier = Modifier.fillMaxWidth(),
                             colors = CardDefaults.cardColors(Color.White)
                         ) {
-                            Image(painter =  painterResource(id = R.drawable.porto), contentDescription = "London",
+                            Image(
+                                painter = painterResource(id = R.drawable.porto),
+                                contentDescription = "London",
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(6.dp),
@@ -320,7 +330,7 @@ fun Home(){
                             modifier = Modifier.padding(start = 5.dp)
                         )
 
-                        Column (
+                        Column(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(10.dp),
@@ -339,3 +349,10 @@ fun Home(){
 
     }
 }
+
+@Preview(showSystemUi = true)
+@Composable
+fun TriproomTheme() {
+//    Home()
+}
+

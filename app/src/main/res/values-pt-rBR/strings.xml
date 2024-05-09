@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">triproom</string>
+    <string name="trip_login">Login</string>
+    <string name="trip_signup">Por favor entre para continuar.</string>
+    <string name="trip_email">Email</string>
+    <string name="trip_password">Senha</string>
+    <string name="trip_signin">ENTRE</string>
+    <string name="trip_dontAcount">Não tem uma conta?</string>
+    <string name="trip_ssingup">Cadastro</string>
+</resources>

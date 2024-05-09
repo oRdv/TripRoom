@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">triproom</string>
+    <string name="trip_login">Login</string>
+    <string name="trip_signup">Please sign in to continue.</string>
+    <string name="trip_email">Email</string>
+    <string name="trip_password">Password</string>
+    <string name="trip_signin">SING IN</string>
+    <string name="trip_dontAcount">Don’t have an account?</string>
+    <string name="trip_ssingup">Sign up</string>
 </resources>
